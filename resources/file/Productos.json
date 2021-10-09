@@ -1,0 +1,52 @@
+[
+  {
+    "codigo": "1000",
+    "producto": "Hamburguesa",
+    "valor": "5500"
+  },
+  {
+    "codigo": "1010",
+    "producto": "Perro Caliente",
+    "valor": "4500"
+  },
+  {
+    "codigo": "1020",
+    "producto": "Empanada",
+    "valor": "1500"
+  },
+  {
+    "codigo": "1030",
+    "producto": "Arepa Rellena",
+    "valor": "2000"
+  },
+  {
+    "codigo": "1040",
+    "producto": "Pastel de papa",
+    "valor": "2500"
+  },
+  {
+    "codigo": "1050",
+    "producto": "Pastel de pollo",
+    "valor": "2500"
+  },
+  {
+    "codigo": "1060",
+    "producto": "Gaseosa",
+    "valor": "3000"
+  },
+  {
+    "codigo": "1070",
+    "producto": "Malteada",
+    "valor": "4000"
+  },
+  {
+    "codigo": "1080",
+    "producto": "Cerveza",
+    "valor": "2500"
+  },
+  {
+    "codigo": "1090",
+    "producto": "Jugo natural",
+    "valor": "2000"
+  }
+]
