@@ -2,13 +2,13 @@ package logica;
 
 import java.io.Serializable;
 
-public class Productos implements Serializable {
+public class Producto implements Serializable {
 
     private String codigo;
     private String producto;
     private double valor;
 
-    public Productos(String codigo, String producto, double valor) {
+    public Producto(String codigo, String producto, double valor) {
         this.codigo = codigo;
         this.producto = producto;
         this.valor = valor;

@@ -2,11 +2,11 @@ package logica;
 
 import java.io.Serializable;
 
-public class Domiciliarios implements Serializable {
+public class Domiciliario implements Serializable {
 
     private String id, nombre;
 
-    public Domiciliarios(String id, String nombre) {
+    public Domiciliario(String id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
@@ -29,7 +29,7 @@ public class Domiciliarios implements Serializable {
 
     @Override
     public String toString() {
-        return "Domiciliarios{" +
+        return "Domiciliario{" +
                 "id='" + id + '\'' +
                 ", nombre='" + nombre + '\'' +
                 '}';
