@@ -31,17 +31,17 @@ public class HelloController implements Initializable {
         mngDomiciliario= new ManegementDomiciliario();
     }
     @FXML
-    private Button añadirDomiciliario;
+    private Button anadirDomiciliario;
     @FXML
-    private Button añadirPedido;
+    private Button anadirPedido;
 
     @FXML
-    void añadirpedid(ActionEvent event) {
+    void anadirpedid(ActionEvent event) {
     r.addProducto();
     }
 
     @FXML
-    void añadirdomicil(ActionEvent event) {
+    void anadirdomicil(ActionEvent event) {
         r.addDomiciliario();
     }
 

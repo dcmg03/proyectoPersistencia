@@ -22,13 +22,13 @@
       
       <AnchorPane layoutX="321.0" layoutY="126.0" prefHeight="200.0" prefWidth="258.0" style="-fx-background-color: white;">
          <children>
-            <Button fx:id="añadirDomiciliario" layoutX="22.0" layoutY="44.0" mnemonicParsing="false" onAction="#añadirdomicil" text="Añadir domiciliario" />
+            <Button fx:id="anadirDomiciliario" layoutX="22.0" layoutY="44.0" mnemonicParsing="false" onAction="#anadirdomicil" text="Añadir domiciliario" />
             <Label layoutX="22.0" layoutY="14.0" prefHeight="17.0" prefWidth="116.0" text="Realizar Pedido">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="añadirPedido" layoutX="22.0" layoutY="88.0" mnemonicParsing="false" onAction="#añadirpedid" text="Añadir Producto" />
+            <Button fx:id="anadirPedido" layoutX="22.0" layoutY="88.0" mnemonicParsing="false" onAction="#anadirpedid" text="Añadir Producto" />
          </children>
       </AnchorPane>
       <Button fx:id="listaProductos" layoutX="45.0" layoutY="278.0" mnemonicParsing="false" onAction="#listProductos" prefHeight="25.0" prefWidth="215.0" text="Productos" />
