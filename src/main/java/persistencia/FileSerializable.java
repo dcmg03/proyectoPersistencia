@@ -1,5 +1,7 @@
 package persistencia;
-
+/**@author Deisy Monroy - Karen Hernández
+ @version 12/10/2021
+ Clase encargada de los archivos a serializar*/
 import java.io.*;
 
 public class FileSerializable implements Serializable {

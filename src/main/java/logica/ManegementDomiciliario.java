@@ -1,5 +1,7 @@
 package logica;
-
+/**@author Deisy Monroy - Karen Hernández
+ @version 12/10/2021
+ Clase encargada de manejaer los domiciliarios*/
 import persistencia.FileDomiciliarios;
 
 import java.io.IOException;
@@ -11,11 +13,13 @@ public class ManegementDomiciliario implements Serializable {
     private ArrayList<Domiciliario> domiciliarios;
     private FileDomiciliarios fileDomiciliarios;
 
+/**Contructor de la clase ManegementDomiciliario*/
     public ManegementDomiciliario(){
         domiciliarios = new ArrayList<>();
         fileDomiciliarios = new FileDomiciliarios();
     }
 
+    /**Metodo para encontrar un domiciliario*/
     public Domiciliario findDomiciliario(String id) {
         for (Domiciliario domiciliario : domiciliarios) {
             if (id.equals(domiciliario.getId())) {
@@ -25,6 +29,7 @@ public class ManegementDomiciliario implements Serializable {
         return null;
     }
 
+    /**Metodo para agragar un domiciliario*/
     public boolean addDomiciliario(Domiciliario domiciliario){
         if (findDomiciliario(domiciliario.getId()) ==  null){
             domiciliarios.add(domiciliario);
@@ -33,6 +38,7 @@ public class ManegementDomiciliario implements Serializable {
         return false;
     }
 
+    /**Metodo para leer los domiciliarios*/
     public ManegementDomiciliario read(String path, String name) throws IOException, ClassNotFoundException {
         fileDomiciliarios.setPath(path);
         fileDomiciliarios.setName(name);
@@ -45,6 +51,7 @@ public class ManegementDomiciliario implements Serializable {
         return mngDomiciliario;
     }
 
+    /**Metodo para escribir los domiciliarios*/
     public void write(String path, String name) throws IOException{
         fileDomiciliarios.setPath(path);
         fileDomiciliarios.setName(name);
