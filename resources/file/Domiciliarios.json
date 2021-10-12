@@ -1,22 +1,33 @@
 [
   {
     "id": "001",
-    "nombre": "Juan Carlos Rojas"
+    "nombre": "Juan Carlos Rojas",
+    "numPedidos": 0,
+    "bono": false
   },
   {
     "id": "002",
-    "nombre": "Yeraldine Prada"
+    "nombre": "Yeraldine Prada",
+    "numPedidos": 1,
+    "bono": false
   },
   {
     "id": "003",
-    "nombre": "Pedro Jaramillo"
+    "nombre": "Pedro Jaramillo",
+    "numPedidos": 3,
+    "bono": true
   },
   {
     "id": "004",
-    "nombre": "Vanessa Cardenas"
+    "nombre": "Vanessa Cardenas",
+    "numPedidos": 1,
+    "bono": false
   },
   {
     "id": "005",
-    "nombre": "Daniel Vichada"
+    "nombre": "Daniel Vichada",
+    "numPedidos": 2,
+    "bono": false
   }
+
 ]

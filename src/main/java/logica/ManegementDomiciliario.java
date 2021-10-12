@@ -16,9 +16,9 @@ public class ManegementDomiciliario implements Serializable {
         fileDomiciliarios = new FileDomiciliarios();
     }
 
-    public Domiciliario findDomiciliario(String id){
-        for(Domiciliario domiciliario : domiciliarios){
-            if (id.equals(domiciliario.getId())){
+    public Domiciliario findDomiciliario(String id) {
+        for (Domiciliario domiciliario : domiciliarios) {
+            if (id.equals(domiciliario.getId())) {
                 return domiciliario;
             }
         }

@@ -5,6 +5,7 @@ import logica.*;
 import javax.swing.*;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Run {
 
@@ -31,9 +32,9 @@ public class Run {
             }
 
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null,"Error en el Archivo","ERROR",JOptionPane.ERROR_MESSAGE);
+            /**Error en el archivo*/
         } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null,"Error la Clase","ERROR",JOptionPane.ERROR_MESSAGE);
+            /**Error en la clase*/
         }
        // myRun.main();
     }
@@ -56,7 +57,9 @@ public class Run {
         String id = JOptionPane.showInputDialog("id");
         if( mngDomiciliario.findDomiciliario( id ) == null ){
             String nombre = JOptionPane.showInputDialog("Nombre");
-            mngDomiciliario.addDomiciliario( new Domiciliario( id,nombre) );
+            int pedidos = Integer.parseInt(JOptionPane.showInputDialog("Pedidos"));
+            double salario = Double.parseDouble(JOptionPane.showInputDialog("Salario"));
+            mngDomiciliario.addDomiciliario( new Domiciliario( id,nombre,pedidos,salario) );
             /**Añadido correctamente*/
         }else{
             /**No se puede ya existe domiciliario*/
@@ -71,16 +74,15 @@ public class Run {
             String direccion = JOptionPane.showInputDialog("Direccion");
             int telefono = Integer.parseInt(JOptionPane.showInputDialog("Telefono"));
             String nombreDomiciliario = JOptionPane.showInputDialog("Nombre Domiciliario");
-            String productos = JOptionPane.showInputDialog("Productos");
-            double valorPedido = Double.parseDouble(JOptionPane.showInputDialog("Valor Pedido"));
+            //ArrayList<Object> pedido = JOptionPane.showInputDialog("Pedido");
+            float valorPedido = Float.parseFloat(JOptionPane.showInputDialog("Valor Pedido"));
 
-            mngGestion.addGestion( new Gestion( numPedido,nombreUsusario,direccion,
-                    nombreDomiciliario,productos,telefono,valorPedido,fecha) );
+            // mngGestion.addGestion( new Gestion( numPedido,nombreUsusario,direccion,
+            //        nombreDomiciliario,pedido,telefono,valorPedido,fecha) );
 
-            JOptionPane.showMessageDialog(null,"Hecho","OK",JOptionPane.INFORMATION_MESSAGE);
-
+            /**Añadido correctamente*/
         }else{
-            JOptionPane.showMessageDialog(null,"No se Puede ya Existe","ERROR",JOptionPane.ERROR_MESSAGE);
+            /**No se puede ya existe domiciliario*/
         }
     }
 
@@ -98,17 +100,48 @@ public class Run {
     }
 
     /**Liquidacion Domiciliarios*/
-    private void liquidacion(){
+    private void liquidacion(float valorPedido){
+        /**digita el id del domiciliario para buscarlo*/
+        String id = JOptionPane.showInputDialog("id");
+        if (mngDomiciliario.findDomiciliario(id) == null){
+            if (mngDomiciliario.findDomiciliario(id).isBono() == true){
+                float costo = (valorPedido * 30)/100;
+                float sueldoDomi = (costo*20)/100;
+                float sueldoEstablecimiento = (costo*10)/100;
+                /**Sueldo de un domiciliario con mas pedidos*/
+                float sueldo = (float) (sueldoDomi + 20.000);
+            }else{
+                float costo = (valorPedido * 30)/100;
+                float sueldoDomi = (costo*20)/100;
+                float sueldoEstablecimiento = (costo*10)/100;
+            }
+        }
 
     }
 
     /**Modificar Datos de un producto*/
     private void cambiarDatosProductos(){
+        /**digita el codigo del producto para buscarlo*/
         String codigo = JOptionPane.showInputDialog("Codigo");
         if( mngProducto.findProducto( codigo ) == null ){
-
+            //mngProducto.findProducto(codigo).setProducto(ingresa lo q usuario modifico del nombre del producto);
+            //mngProducto.findProducto(codigo).setValor(ingresa lo q usuario modifico del valor);
+        }else{
+            /**producto no encontrado*/
         }
+    }
 
+    /**Modificar Datos de un Domiciliario*/
+    private void cambiarDatosDomiciliario(){
+        /**digita el id del domiciliario para buscarlo*/
+        String id = JOptionPane.showInputDialog("id");
+        if( mngDomiciliario.findDomiciliario( id ) == null ){
+            //mngDomiciliario.findDomiciliario(id).setNombre(ingresa lo q usuario modifico del nombre);
+            //mngDomiciliario.findDomiciliario(id).setNumPedidos(ingresa lo q usuario modifico de num pedidos);
+            //mngDomiciliario.findDomiciliario(id).setBono(ingresa lo q el usuario modifico del bono);
+        }else{
+            /**producto no encontrado*/
+        }
     }
 
     /**Salir y guardar cambios en el .json*/
@@ -120,7 +153,7 @@ public class Run {
                 mngDomiciliario.write("resources/file/", "Domiciliarios.json");
                 mngGestion.write("resources/file/", "Gestion.json");
             } catch (IOException e) {
-                JOptionPane.showMessageDialog(null,"Error al Grabar","ERROR",JOptionPane.ERROR_MESSAGE);
+                /**Error al grabar datos*/
             }
             System.exit(0);
         }
