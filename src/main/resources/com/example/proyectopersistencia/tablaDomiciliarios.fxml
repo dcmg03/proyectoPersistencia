@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectopersistencia.HelloController">
+   <children>
+      <TableView fx:id="tablaDom" layoutX="3.0" layoutY="6.0" prefHeight="387.0" prefWidth="589.0">
+         <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="188.0" text="Nombre Completo" />
+            <TableColumn prefWidth="236.0" text="Número de Pedidos" />
+            <TableColumn minWidth="0.0" prefWidth="164.0" text="Bonos" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

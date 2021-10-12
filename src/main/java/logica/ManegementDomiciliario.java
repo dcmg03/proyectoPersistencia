@@ -56,4 +56,6 @@ public class ManegementDomiciliario implements Serializable {
     public ArrayList<Domiciliario> getDomiciliarios(){
         return (ArrayList<Domiciliario>) domiciliarios.clone();
     }
+
+
 }
