@@ -21,6 +21,12 @@ public class Domiciliario implements Serializable {
         this.numPedidos = numPedidos;
         this.bono = false;
     }
+
+    public Domiciliario(String id, String nombre) {
+        this.id=id;
+        this.nombre=nombre;
+    }
+
     /**@return retorna un dato de tipo string - id*/
     public String getId() {
         return id;

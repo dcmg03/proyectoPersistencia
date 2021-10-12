@@ -12,14 +12,14 @@ public class Gestion implements Serializable {
     private String numPedido,nombreUsuario,direccion,nombreDomiciliario;
     private float telefono;
     ArrayList<Object> pedido = new ArrayList<Object>();
-    private float valorPedido;
+    private double valorPedido;
     private LocalDate fecha;
 
     /**Contrsuctor de la clase Gestion
      * recibe @param String - numPedido, String - nombreUsuario, String - direccion, ArrayList - pedido,
-     * String - nombreDomiciliario, float - telefono, float - valorPedido, LocalDate - fecha*/
-    public Gestion(String numPedido, String nombreUsuario, String direccion, String nombreDomiciliario, ArrayList<Object> pedido
-                   , int telefono, float valorPedido, LocalDate fecha) {
+     * String - nombreDomiciliario, float - telefono, double - valorPedido, LocalDate - fecha*/
+    public Gestion(String numPedido, String nombreUsuario, String direccion, String nombreDomiciliario, String pedido
+                   , int telefono, double valorPedido, LocalDate fecha) {
         this.numPedido = numPedido;
         this.nombreUsuario = nombreUsuario;
         this.direccion = direccion;
@@ -28,6 +28,9 @@ public class Gestion implements Serializable {
         this.valorPedido = valorPedido;
         this.fecha = fecha;
     }
+
+
+
     /**@return retorna un dato de tipo string - numPedido*/
     public String getNumPedido() {
         return numPedido;
@@ -89,7 +92,7 @@ public class Gestion implements Serializable {
     }
 
     /**@return retorna un dato de tipo float - valorPedido*/
-    public float getValorPedido() {
+    public double getValorPedido() {
         return valorPedido;
     }
 
