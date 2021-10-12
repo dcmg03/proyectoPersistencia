@@ -15,7 +15,7 @@ public class ManegementProducto implements Serializable {
         productos = new ArrayList<>();
         fileProductos = new FileProductos();
     }
-
+    /**Encontrar un producto*/
     public Producto findProducto(String codigo){
         for (Producto producto: productos){
             if (codigo.equals(producto.getCodigo())){
@@ -24,6 +24,7 @@ public class ManegementProducto implements Serializable {
         }
         return null;
     }
+    /**Añadir un nuevo producto*/
     public boolean addProducto (Producto producto){
        if(findProducto(producto.getCodigo()) == null){
            productos.add(producto);
@@ -31,6 +32,7 @@ public class ManegementProducto implements Serializable {
         return false;
     }
 
+    /**leer productos*/
     public ManegementProducto read (String path, String name) throws IOException, ClassNotFoundException {
         fileProductos.setPath(path);
         fileProductos.setName(name);
@@ -43,6 +45,7 @@ public class ManegementProducto implements Serializable {
         return mngProducto;
     }
 
+    /**Escribir productos*/
     public void write(String path, String name) throws IOException{
         fileProductos.setPath(path);
         fileProductos.setName(name);
@@ -54,4 +57,8 @@ public class ManegementProducto implements Serializable {
     public ArrayList<Producto> getProductos(){
         return (ArrayList<Producto>) productos.clone();
     }
+
+
+
+
 }
